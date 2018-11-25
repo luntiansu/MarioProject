@@ -16,56 +16,62 @@ using namespace std;
 
 int main(int argc, char ** argv)
 {
+    const int windowHeight = 600;
+    const int windowWidth = 1000;
+    SDL_Plotter g(windowHeight,windowWidth);   // makes width and height of play window
     
-    SDL_Plotter g(1000,1000);
     bool stopped = false;
-    bool colored = false;
-    int x = 0,y = 0, xd, yd;
-    int R,G,B;
-    R = 100;
-    G = 20;
-    B = 50;
+    
+    int width = 74;
+    int height = 70;
+    int posX = 200;
+    int posY = 200;
     
     while (!g.getQuit())
     {
-        // INPUT
+        //input
+        if(g.getKey() == DOWN_ARROW)    // allows you to move
+        {
+            posY = min(posY + 4, windowHeight - height);    // ensures you do not go off screen
+        }
+        else if (g.getKey() == UP_ARROW)
+        {
+            posY = max(posY - 4,0);
+        }
+        else if (g.getKey() == RIGHT_ARROW)
+        {
+            posX = min(posX + 4, windowWidth - width);
+        }
+        else if (g.getKey() == LEFT_ARROW)
+        {
+            posX = max(posX - 4, 0);
+        }
+        
+        // draw background
+        for (int col = 0; col < windowWidth; ++col)
+        {
+            for (int row = 0; row < windowHeight; row++)
+            {
+                g.plotPixel(col,row, 300,225,225);
+            }
+        }
+        // draw loop
+        for (int col = posX; col < width + posX; col++)   // goes through all columns
+        {
+            for (int row = posY; row < height + posY; ++row)
+            {
+                g.plotPixel(col,row, 23,10,204);
+            }
+        }
+        
         if(g.kbhit()){
-            char key = g.getKey();
-            if(key == RIGHT_ARROW) {
-                x += 10;
-            }
-            else if(key == LEFT_ARROW) {
-                x -= 30;
-                
-            }
-            else if(key == DOWN_ARROW){
-                y-= 10;
-            }
-            else if(key ==UP_ARROW){
-                y+= 10;
-            }
+            g.getKey();
         }
         
-        // DRAW
-        //x = rand()%g.getCol();
-        //y = rand()%g.getRow();
         
-        for (int i = 0; i < 1000; i++) {
-            for (int j = 0; j < 1000; j++) {
-                g.plotPixel(j + x, i + y, 255, 255, 255);
-                
-            }
-        }
-        for (int i = 0; i < 100; i++) {
-            for (int j = 0; j < 100; j++) {
-                g.plotPixel(j + x, i + y, R, G, B);
-                
-            }
-        }
         
         g.update();
     }
-    
 }
 
 
