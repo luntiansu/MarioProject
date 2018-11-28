@@ -1,0 +1,31 @@
+Mario Game: Created by Bryce Williams, Miles Greene, Amanda Cervantes, Louis Wu, Hao Sheng. 
+
+How to Play the Game: 
+-	To move to the left use the left arrow key. 
+-	To move to the right use the right arrow key.
+-	To jump use the up key. 
+How to Save the Game:
+-	To save the game press ctrl + s at the same time to save your spot on the game. 
+How to Pause the Game: 
+-	To pause the game press ctrl + p at the same time to pause the game from starting. 
+-	To resume the game press ctrl + r at the same time to resume the game. 
+
+Explanation of the Game: 
+-	RUN, JUMP, DODGE!!
+-	In this game you are Mario and your goal is to stay alive. In order to stay alive you must dodge or jump over the moving ghosts. In order to eliminate the ghosts you will jump from a lower floor and hit the floor where the ghost is above.
+-	If you are hit by the ghosts you will lose one of your six lives. 
+-	In this game you only have 6 lives. 
+
+Pow Boxes. 
+-	If you hit the POW box the ghosts movement will stop and you will be able to knock them out by running over them. 
+
+Game Levels: 
+-	The game will have 5 different levels. 
+-	Each level looks the same but the difficulty increases. 
+-	Once you finish all 5 levels you win the game! 
+
+How to play the game: 
+-	If you want to run this game on a computer download codeblocks or clion with c++ language and mingw onto your computer. 
+-	Then go to lazyfoo.com and follow the instructions for how to download sdl. 
+
+HAVE FUN PLAYING!!!
